@@ -1,2 +1,2 @@
 # MachineLearning
-Programming assignment about machine learning from coursera
+Programming assignments about machine learning from coursera
