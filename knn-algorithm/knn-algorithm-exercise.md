@@ -1,5 +1,5 @@
-#<center>K Nearest Neighbor Algorithm Exercise
-><center>wangruns
+#K Nearest Neighbor Algorithm Exercise
+>wangruns
 
 ##Introduction
 In this exercise, you will implement k nearest neighbor algorithm with k-dimension tree and get to see it work on data. Before starting on this programming  exercise, we strongly recommend watching the book 《statistical learning method》and understanding what the core concept the algorithm is.
@@ -16,26 +16,26 @@ Now we have already know something about what k nearest neighbor is, the next th
 * **How to find the k samples or elements.**
 
 In this exercise I will choose k=5, of course you can choose other value as a trial, but if the value of k is too small, the over fitting problem may occur. However if the value of k is too large, the under fitting problem may occur. Actually, you can try a different value to trade off between them. I will use Euclidean distance to define the nearest:
-<center>![image0001](https://raw.githubusercontent.com/wangruns/wangruns.github.io/master/images/blog/knn/image0001.png)
+![image0001](https://raw.githubusercontent.com/wangruns/wangruns.github.io/master/images/blog/knn/image0001.png)
 
 You can also choose other formula to define the nearest. As for how find the k samples or elements that are most nearest. It’s obvious that we can calculate each distance from the training set to the target sample by linear scanning and then find the most shortest ones as the k nearest neighbors, which is easy to implement, but may perform slowly especially when the training set is very large. Luckily we can address the problem with the help of k-dimension tree.
 
 ##Construct k-dimension tree
 Before we program to implement our k-dimension tree, we need to learn about how k-dimension tree works.Say that we have a training set of 2 dimension as followed:
-<center>![image0002](https://raw.githubusercontent.com/wangruns/wangruns.github.io/master/images/blog/knn/image0002.png)
+![image0002](https://raw.githubusercontent.com/wangruns/wangruns.github.io/master/images/blog/knn/image0002.png)
 
 1. Find the median number  among the training set in the 1 dimension space, to be more specific, we can see that {2,5,9,4,8,7} are the numbers in the 1 dimension space, so we can sort them based on the 1 dimension space:
 
     {(2,3),(4,7),(5,4),(7,2),(8,1),(9,6)}, and (7,2) is the median one, choose it as the root node of the k-dimension tree:
-    
-    <center>![image0003](https://raw.githubusercontent.com/wangruns/wangruns.github.io/master/images/blog/knn/image0003.png)
+
+![image0003](https://raw.githubusercontent.com/wangruns/wangruns.github.io/master/images/blog/knn/image0003.png)
 
 
 2. Find the median number among the training set in the 2 dimension space, to be more specific, we can see that {3,7,4} are the numbers in the 2 dimension space on the left sub tree, and {1,6} are the numbers in the 2 dimension space on the right sub tree. Actually, what we need to is to repeat the steps in the (1) recursively except for the change of dimension. On the left sub tree, we sort it based on the 2 dimension space:
 
     {(2,3),(5,4),(4,7)}, and (5,4) is the median one, choose it as the root node of the k-dimension tree on this layer. In the same way we can get that (9,6) is the median one on the right sub tree, and choose it as root node of the k-dimension tree on this layer as well:
 
-    <center>![image0004](https://raw.githubusercontent.com/wangruns/wangruns.github.io/master/images/blog/knn/image0004.png)
+![image0004](https://raw.githubusercontent.com/wangruns/wangruns.github.io/master/images/blog/knn/image0004.png)
 
 Naturally, if we want to use k-dimension tree, the first we need to do is to construct this data structure to store our training set samples whatever language we use for programming. Here I will use Python to implement it.
 
