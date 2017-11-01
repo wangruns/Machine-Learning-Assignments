@@ -1,12 +1,12 @@
-#K Nearest Neighbor Algorithm Exercise
+# K Nearest Neighbor Algorithm Exercise
 >wangruns
 
-##Introduction
+## Introduction
 In this exercise, you will implement k nearest neighbor algorithm with k-dimension tree and get to see it work on data. Before starting on this programming  exercise, we strongly recommend watching the book 《statistical learning method》and understanding what the core concept the algorithm is.
 
 To get started with the exercise, you will need to have some python knowledge, especially numpy and list, but if you don’t know python at all, it doesn’t matter and you can find instructions on their website to get a quick view.
 
-##What is k nearest neighbor
+## What is k nearest neighbor
 K nearest neighbor is a based algorithm for classification and regression. In this experiment we only implement k nearest neighbor algorithm for classification. Given a new input sample, then find the k samples which are nearest away from the new input sample in the training set, they are defined as k nearest neighbors, finally we will make decision according to the k nearest neighbors, that is to say if most of the k nearest neighbors are apple, so we will classify the new input sample as apple as well. That’s the core concept of this algorithm as far as I am concerned.
 
 Now we have already know something about what k nearest neighbor is, the next thing we need to know is: 
@@ -20,7 +20,7 @@ In this exercise I will choose k=5, of course you can choose other value as a tr
 
 You can also choose other formula to define the nearest. As for how find the k samples or elements that are most nearest. It’s obvious that we can calculate each distance from the training set to the target sample by linear scanning and then find the most shortest ones as the k nearest neighbors, which is easy to implement, but may perform slowly especially when the training set is very large. Luckily we can address the problem with the help of k-dimension tree.
 
-##Construct k-dimension tree
+## Construct k-dimension tree
 Before we program to implement our k-dimension tree, we need to learn about how k-dimension tree works.Say that we have a training set of 2 dimension as followed:
 ![image0002](https://raw.githubusercontent.com/wangruns/wangruns.github.io/master/images/blog/knn/image0002.png)
 
@@ -39,7 +39,7 @@ Before we program to implement our k-dimension tree, we need to learn about how 
 
 Naturally, if we want to use k-dimension tree, the first we need to do is to construct this data structure to store our training set samples whatever language we use for programming. Here I will use Python to implement it.
 
-##Classification exercise
+## Classification exercise
 There are 150 instances in the training set and test set totally. Each instance has 4 attributes(sepal length in cm, sepal width in cm, petal length in cm, petal width in cm). The class are Iris Setosa, Iris Versicolour and Iris Virginica. The training set looks like as followed:
 
 4.7,3.2,1.3,0.2,Iris-setosa
@@ -58,7 +58,7 @@ and the test set looks like as followed:
 
 Our work is to get our classifier via the training set and use it to make decision on test set. Actually, we can use 3 steps to address the problem.
 
-###Part 1: Data preprocessing
+### Part 1: Data preprocessing
 Load the data and transform the form of data to what we need i.e vector or matrix.
 
 ```python
@@ -80,7 +80,7 @@ Load the data and transform the form of data to what we need i.e vector or matri
 	Xtest=np.array(testSet).astype(float);
 ```
 
-###Part 2: Construct kd tree
+### Part 2: Construct kd tree
 Construct the k nearest neighbor tree with our training set.
 
 ```python
@@ -91,7 +91,7 @@ Construct the k nearest neighbor tree with our training set.
 	kdTree=constructKDTree(trainSet,0);
 ```
 
-###Part 3: Prediction by knn
+### Part 3: Prediction by knn
 Predict the result via k nearest neighbors algorithm, which will fist find k nearest neighbors via our kdTree and then make decision via majority voting rule.
 
 ```python
@@ -109,7 +109,7 @@ Predict the result via k nearest neighbors algorithm, which will fist find k nea
 		print xtest,hypothesis;
 ```
 
-##Programming codes
+## Programming codes
 ```python
 ## K nearest neighbor algorithm learn and exercise
 
