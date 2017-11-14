@@ -1,4 +1,3 @@
-<script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
 # Linear Regression Algorithm Exercise
 >wangruns
 
@@ -29,11 +28,13 @@ h=theta0 + theta1\*x1 + theta2\*x2 + ... + theta5\*x5
 
 ## Gradient descent
 Say that our linear regression hypothesis model is:
-
-$$J ( %THETA ) = sum from { i = 1 } to { m } { (h(x^{(i)})-y^{(i)})^{2} }$$
+![image0001](https://raw.githubusercontent.com/wangruns/wangruns.github.io/master/images/blog/linear-regression/Selection_015.png)
 
 and the objective of linear regression is to minimize the cost function:
+![image0001](https://raw.githubusercontent.com/wangruns/wangruns.github.io/master/images/blog/machine-learning-ex1/Selection_006.png)
 
+and we will use the gradient descent to update the parameter theta:
+![image0001](https://raw.githubusercontent.com/wangruns/wangruns.github.io/master/images/blog/machine-learning-ex1/Selection_004.png)
 
 
 ## Classification exercise
@@ -65,11 +66,11 @@ Our work is to get our regression model via the training set and use it to predi
 
 ```python
 ## ====================Part 1: Data Preprocessing====================
-#  Load the data and transform the form of data to what we need. e.g
-#  vector or matrix
-#training set and test set input
-df=pd.read_table(path+'./noise_train.txt',header=None,sep=',');
-df_test=pd.read_table(path+'./noise_test.txt',header=None,sep=',');
+	#  Load the data and transform the form of data to what we need. e.g
+	#  vector or matrix
+	#training set and test set input
+	df=pd.read_table(path+'./noise_train.txt',header=None,sep=',');
+	df_test=pd.read_table(path+'./noise_test.txt',header=None,sep=',');
 
 ```
 
@@ -77,24 +78,24 @@ df_test=pd.read_table(path+'./noise_test.txt',header=None,sep=',');
 
 ```python
 ## ===============Part 2: Choose data and separate label===============
-#  randomly choose training set and cross validation set, here i set the
-#  ratio to 7:3
-#  then separate the features and label
-#randomly choose training set and cross validation set
-ratio=0.7;
-labelIndex=5;
-n=int(ratio*len(df));
-trainSet=df[:n].sample(n);
-validationSet=df[n:].sample(len(df)-n);
-X_train=trainSet.drop(labelIndex,axis=1).values;
-y_train=trainSet[labelIndex].values;
-X_val=validationSet.drop(labelIndex,axis=1).values;
-y_val=validationSet[labelIndex].values;
-X_test=df_test.values;
-#feature normalize
-X_train_norm=featureNormalize(X_train);
-X_val_norm=featureNormalize(X_val);
-X_test_norm=featureNormalize(X_test);
+	#  randomly choose training set and cross validation set, here i set the
+	#  ratio to 7:3
+	#  then separate the features and label
+	#randomly choose training set and cross validation set
+	ratio=0.7;
+	labelIndex=5;
+	n=int(ratio*len(df));
+	trainSet=df[:n].sample(n);
+	validationSet=df[n:].sample(len(df)-n);
+	X_train=trainSet.drop(labelIndex,axis=1).values;
+	y_train=trainSet[labelIndex].values;
+	X_val=validationSet.drop(labelIndex,axis=1).values;
+	y_val=validationSet[labelIndex].values;
+	X_test=df_test.values;
+	#feature normalize
+	X_train_norm=featureNormalize(X_train);
+	X_val_norm=featureNormalize(X_val);
+	X_test_norm=featureNormalize(X_test);
 
 ```
 
@@ -118,14 +119,14 @@ X_test_norm=featureNormalize(X_test);
 
 ```python
 ## ====================Part 4: Validation====================
-#  after we get our hypothesis model via our training set, then
-#  we need to use cross validation to see how well it works for
-#  the new samples.
-#  we can see that the squared error J of all the cross validation
-#  data set is about 21.9643222089
-estimate(theta,X_val_norm,y_val);
-print 'Please any key to begin predicting...';
-sys.stdin.readline();
+	#  after we get our hypothesis model via our training set, then
+	#  we need to use cross validation to see how well it works for
+	#  the new samples.
+	#  we can see that the squared error J of all the cross validation
+	#  data set is about 21.9643222089
+	estimate(theta,X_val_norm,y_val);
+	print 'Please any key to begin predicting...';
+	sys.stdin.readline();
 
 ```
 
