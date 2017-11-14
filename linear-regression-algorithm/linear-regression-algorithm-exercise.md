@@ -56,12 +56,14 @@ This problem has the following inputs:
 The training set looks like as followed:
 
 800,0,0.3048,71.3,0.00266337,126.201
+
 1000,0,0.3048,71.3,0.00266337,125.201
 
 ……
 
 and the test set looks like as followed:
 1250,0,0.3048,71.3,0.00266337
+
 1600,0,0.3048,71.3,0.00266337
 
 ……
