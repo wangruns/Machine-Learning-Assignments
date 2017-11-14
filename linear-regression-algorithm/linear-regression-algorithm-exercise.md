@@ -30,7 +30,7 @@ h=theta0 + theta1\*x1 + theta2\*x2 + ... + theta5\*x5
 Say that our linear regression hypothesis model is:
 
 
-![image0001](https://raw.githubusercontent.com/wangruns/wangruns.github.io/master/images/blog/linear-regression/Selection_015.png)
+![image0001](https://raw.githubusercontent.com/wangruns/wangruns.github.io/master/images/blog/linear-regression/Selection_016.png)
 
 and the objective of linear regression is to minimize the cost function:
 
