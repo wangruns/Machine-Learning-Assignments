@@ -142,7 +142,7 @@ because the regularized term is only related to the parameters theta here, there
 ![image0001](https://raw.githubusercontent.com/wangruns/wangruns.github.io/master/images/blog/polynomial-regression/Selection_003.png)
 
 
-## Classification exercise
+## Regression exercise
 This problem has the following inputs: 
 
 1. Frequency, in Hertzs. 
