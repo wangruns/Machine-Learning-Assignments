@@ -120,7 +120,7 @@ def featureExtend(X,n,degree):
 ```
 
 
-## define polynomial hypothesis model
+## Define polynomial hypothesis model
 Remenber that linear regression hypothesis model is:
 
 ![image0001](https://raw.githubusercontent.com/wangruns/wangruns.github.io/master/images/blog/polynomial-regression/Selection_005.png)
