@@ -43,7 +43,7 @@ and we will use the gradient descent to update the parameter theta:
 ![image0001](https://raw.githubusercontent.com/wangruns/wangruns.github.io/master/images/blog/machine-learning-ex1/Selection_004.png)
 
 
-## Classification exercise
+## Regression exercise
 This problem has the following inputs: 
 
 1. Frequency, in Hertzs. 
@@ -62,6 +62,7 @@ The training set looks like as followed:
 ……
 
 and the test set looks like as followed:
+
 1250,0,0.3048,71.3,0.00266337
 
 1600,0,0.3048,71.3,0.00266337
